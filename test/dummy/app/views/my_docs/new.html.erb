@@ -1,0 +1,16 @@
+<%= simple_form_for @my_doc do |f| %>
+  <%= f.input :doc_type, as: :select, collection: %w[image video text], include_blank: false %>
+
+  <%= f.dependent_fields depends_on_any: { doc_type: 'text' } do %>
+    <%= f.input :text %>
+    <%= f.input :has_title, as: :boolean %>
+  <% end %>
+
+  <%= f.dependent_fields depends_on_all: { doc_type: 'text', has_title: true } do %>
+    <%= f.input :title %>
+  <% end %>
+
+  <%= f.dependent_fields depends_on_none: { doc_type: 'text' } do %>
+    <%= f.input :caption %>
+  <% end %>
+<% end %>
