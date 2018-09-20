@@ -13,6 +13,4 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 
-puts SimpleFormDependentFields.asset_path
-
 Rails.application.config.assets.paths += [SimpleFormDependentFields.asset_path]
