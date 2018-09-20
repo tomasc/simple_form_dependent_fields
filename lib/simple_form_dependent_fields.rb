@@ -1,4 +1,4 @@
-require 'action_view'
+require 'simple_form'
 
 require 'simple_form_dependent_fields/version'
 
