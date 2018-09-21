@@ -1,3 +1,5 @@
+#= require lodash
+
 do ($ = jQuery, window, document) ->
   pluginName = 'SimpleFormDependentFields'
   defaults =
@@ -119,6 +121,3 @@ do ($ = jQuery, window, document) ->
     @each ->
       if !$.data(@, "plugin_#{pluginName}")
         $.data(@, "plugin_#{pluginName}", new Plugin(@, options))
-
-$ ->
-  $('.simple_form_dependent_fields').SimpleFormDependentFields()

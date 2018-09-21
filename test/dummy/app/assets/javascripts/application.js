@@ -11,7 +11,6 @@
 // about supported directives.
 //
 //= require jquery
-//= require lodash
 //= require simple_form_dependent_fields
 //= require rails-ujs
 //= require_tree .
