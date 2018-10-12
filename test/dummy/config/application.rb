@@ -6,7 +6,6 @@ require 'action_view/railtie'
 require 'sprockets/railtie'
 
 require 'jquery-rails'
-require 'lodash-rails'
 require 'simple_form'
 
 require 'simple_form_dependent_fields'

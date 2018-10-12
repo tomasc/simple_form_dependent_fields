@@ -1916,3 +1916,133 @@ Processing by MyDocsController#new as HTML
   Rendering my_docs/new.html.erb within layouts/application
   Rendered my_docs/new.html.erb within layouts/application (5.8ms)
 Completed 200 OK in 7ms (Views: 6.7ms)
+-----------------------------------------------------------------------------------------------------------------
+Dependent Fields::capybara::depends_on_any: test_0001_shows dependent fields when selecting an option in a select
+-----------------------------------------------------------------------------------------------------------------
+Started GET "/" for 127.0.0.1 at 2018-10-12 15:40:10 +0200
+Processing by MyDocsController#new as HTML
+  Rendering my_docs/new.html.erb within layouts/application
+  Rendered my_docs/new.html.erb within layouts/application (79.9ms)
+Completed 500 Internal Server Error in 403ms
+------------------------------------------------------------------------------------------------------------------
+Dependent Fields::capybara::depends_on_none: test_0001_shows dependent fields when selecting an option in a select
+------------------------------------------------------------------------------------------------------------------
+Started GET "/" for 127.0.0.1 at 2018-10-12 15:40:11 +0200
+Processing by MyDocsController#new as HTML
+  Rendering my_docs/new.html.erb within layouts/application
+  Rendered my_docs/new.html.erb within layouts/application (5.8ms)
+Completed 500 Internal Server Error in 10ms
+--------------------------------------
+Dependent Fields::capybara: test_0001_
+--------------------------------------
+Started GET "/" for 127.0.0.1 at 2018-10-12 15:40:11 +0200
+Processing by MyDocsController#new as HTML
+  Rendering my_docs/new.html.erb within layouts/application
+  Rendered my_docs/new.html.erb within layouts/application (6.0ms)
+Completed 500 Internal Server Error in 10ms
+----------------------------------------------------------------------------------------------------
+Dependent Fields::capybara::depends_on_all: test_0001_shows a dependent field when clicking checkbox
+----------------------------------------------------------------------------------------------------
+Started GET "/" for 127.0.0.1 at 2018-10-12 15:40:11 +0200
+Processing by MyDocsController#new as HTML
+  Rendering my_docs/new.html.erb within layouts/application
+  Rendered my_docs/new.html.erb within layouts/application (6.2ms)
+Completed 500 Internal Server Error in 12ms
+----------------------------------------------------------------------------------------------------
+Dependent Fields::capybara::depends_on_all: test_0001_shows a dependent field when clicking checkbox
+----------------------------------------------------------------------------------------------------
+Started GET "/" for 127.0.0.1 at 2018-10-12 15:41:06 +0200
+Processing by MyDocsController#new as HTML
+  Rendering my_docs/new.html.erb within layouts/application
+  Rendered my_docs/new.html.erb within layouts/application (14.8ms)
+Completed 500 Internal Server Error in 300ms
+------------------------------------------------------------------------------------------------------------------
+Dependent Fields::capybara::depends_on_none: test_0001_shows dependent fields when selecting an option in a select
+------------------------------------------------------------------------------------------------------------------
+Started GET "/" for 127.0.0.1 at 2018-10-12 15:41:07 +0200
+Processing by MyDocsController#new as HTML
+  Rendering my_docs/new.html.erb within layouts/application
+  Rendered my_docs/new.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 9ms
+-----------------------------------------------------------------------------------------------------------------
+Dependent Fields::capybara::depends_on_any: test_0001_shows dependent fields when selecting an option in a select
+-----------------------------------------------------------------------------------------------------------------
+Started GET "/" for 127.0.0.1 at 2018-10-12 15:41:07 +0200
+Processing by MyDocsController#new as HTML
+  Rendering my_docs/new.html.erb within layouts/application
+  Rendered my_docs/new.html.erb within layouts/application (5.8ms)
+Completed 500 Internal Server Error in 10ms
+--------------------------------------
+Dependent Fields::capybara: test_0001_
+--------------------------------------
+Started GET "/" for 127.0.0.1 at 2018-10-12 15:41:08 +0200
+Processing by MyDocsController#new as HTML
+  Rendering my_docs/new.html.erb within layouts/application
+  Rendered my_docs/new.html.erb within layouts/application (5.1ms)
+Completed 500 Internal Server Error in 9ms
+------------------------------------------------------------------------------------------------------------------
+Dependent Fields::capybara::depends_on_none: test_0001_shows dependent fields when selecting an option in a select
+------------------------------------------------------------------------------------------------------------------
+Started GET "/" for 127.0.0.1 at 2018-10-12 15:41:30 +0200
+Processing by MyDocsController#new as HTML
+  Rendering my_docs/new.html.erb within layouts/application
+  Rendered my_docs/new.html.erb within layouts/application (59.7ms)
+Completed 500 Internal Server Error in 309ms
+----------------------------------------------------------------------------------------------------
+Dependent Fields::capybara::depends_on_all: test_0001_shows a dependent field when clicking checkbox
+----------------------------------------------------------------------------------------------------
+Started GET "/" for 127.0.0.1 at 2018-10-12 15:41:31 +0200
+Processing by MyDocsController#new as HTML
+  Rendering my_docs/new.html.erb within layouts/application
+  Rendered my_docs/new.html.erb within layouts/application (29.2ms)
+Completed 500 Internal Server Error in 37ms
+--------------------------------------
+Dependent Fields::capybara: test_0001_
+--------------------------------------
+Started GET "/" for 127.0.0.1 at 2018-10-12 15:41:31 +0200
+Processing by MyDocsController#new as HTML
+  Rendering my_docs/new.html.erb within layouts/application
+  Rendered my_docs/new.html.erb within layouts/application (5.1ms)
+Completed 500 Internal Server Error in 10ms
+-----------------------------------------------------------------------------------------------------------------
+Dependent Fields::capybara::depends_on_any: test_0001_shows dependent fields when selecting an option in a select
+-----------------------------------------------------------------------------------------------------------------
+Started GET "/" for 127.0.0.1 at 2018-10-12 15:41:31 +0200
+Processing by MyDocsController#new as HTML
+  Rendering my_docs/new.html.erb within layouts/application
+  Rendered my_docs/new.html.erb within layouts/application (6.8ms)
+Completed 500 Internal Server Error in 14ms
+-----------------------------------------------------------------------------------------------------------------
+Dependent Fields::capybara::depends_on_any: test_0001_shows dependent fields when selecting an option in a select
+-----------------------------------------------------------------------------------------------------------------
+Started GET "/" for 127.0.0.1 at 2018-10-12 15:42:19 +0200
+Processing by MyDocsController#new as HTML
+  Rendering my_docs/new.html.erb within layouts/application
+  Rendered my_docs/new.html.erb within layouts/application (87.9ms)
+Completed 200 OK in 1091ms (Views: 1024.2ms)
+Started GET "/assets/application-4a1de20145e05d74e76ed01b44107a0e337a0c4fcaaf9198935c658bdc05969b.css" for 127.0.0.1 at 2018-10-12 15:42:20 +0200
+Started GET "/assets/application-59b068c516ef2421e497613a39d52a99942ceed938039c304f0fd3e14bbd5f73.js" for 127.0.0.1 at 2018-10-12 15:42:20 +0200
+--------------------------------------
+Dependent Fields::capybara: test_0001_
+--------------------------------------
+Started GET "/" for 127.0.0.1 at 2018-10-12 15:42:31 +0200
+Processing by MyDocsController#new as HTML
+  Rendering my_docs/new.html.erb within layouts/application
+  Rendered my_docs/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 8ms (Views: 7.8ms)
+------------------------------------------------------------------------------------------------------------------
+Dependent Fields::capybara::depends_on_none: test_0001_shows dependent fields when selecting an option in a select
+------------------------------------------------------------------------------------------------------------------
+Started GET "/" for 127.0.0.1 at 2018-10-12 15:42:31 +0200
+Processing by MyDocsController#new as HTML
+  Rendering my_docs/new.html.erb within layouts/application
+  Rendered my_docs/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 6ms (Views: 6.0ms)
+----------------------------------------------------------------------------------------------------
+Dependent Fields::capybara::depends_on_all: test_0001_shows a dependent field when clicking checkbox
+----------------------------------------------------------------------------------------------------
+Started GET "/" for 127.0.0.1 at 2018-10-12 15:42:41 +0200
+Processing by MyDocsController#new as HTML
+  Rendering my_docs/new.html.erb within layouts/application
+  Rendered my_docs/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 10ms (Views: 10.3ms)

@@ -1,9 +1,11 @@
-#= require lodash/4.17.10/index.js
+import { filter, flatten } from 'lodash'
 
 do ($ = jQuery, window, document) ->
-  pluginName = 'SimpleFormDependentFields'
+  pluginName = 'simple_form_dependent_fields'
+  document = window.document
   defaults =
     debug: false
+    name: 'SimpleFormDependentFields'
     scope_selector: '.simple_form_dependent_fields__scope, .simple_form_dependent_fields__item, form'
 
   class Plugin
@@ -22,7 +24,7 @@ do ($ = jQuery, window, document) ->
         return unless @is_dependent_on_input($(e.target))
         return unless $(e.target).closest(@settings.scope_selector).is(@scope_element)
         @update_dependent_fields()
-      @scope_element.on "change.#{pluginName}", 'input,select', @form_update_handler
+      @scope_element.on "change.#{@options.name}", 'input,select', @form_update_handler
 
       @update_dependent_fields()
 
@@ -30,7 +32,7 @@ do ($ = jQuery, window, document) ->
       # we need to be specific to remove only handler of this updated fields
       # otherwise we might accidentally remove all handlers of all dependent fields
       # in the same form
-      @scope_element.off ".#{pluginName}", 'input,select', @form_update_handler
+      @scope_element.off ".#{@options.name}", 'input,select', @form_update_handler
 
     # ---------------------------------------------------------------------
 
@@ -50,7 +52,7 @@ do ($ = jQuery, window, document) ->
     # ---------------------------------------------------------------------
 
     is_dependent_on_input: ($input) ->
-      _.filter(@get_input_names(), (name) -> $input.is("[name$='[#{name}]']")).length > 0
+      filter(@get_input_names(), (name) -> $input.is("[name$='[#{name}]']")).length > 0
 
     # ---------------------------------------------------------------------
 
@@ -76,7 +78,7 @@ do ($ = jQuery, window, document) ->
     is_any_valid: ->
       res = false
       for name, values of @depends_on_any()
-        for value in _.flatten([values])
+        for value in flatten([values])
           input_value = @is_valid(name, value)
           res = (res || input_value)
       res
@@ -84,7 +86,7 @@ do ($ = jQuery, window, document) ->
     is_all_valid: ->
       res = true
       for name, values of @depends_on_all()
-        for value in _.flatten([values])
+        for value in flatten([values])
           input_value = @is_valid(name, value)
           res = (res && input_value)
       res
@@ -92,7 +94,7 @@ do ($ = jQuery, window, document) ->
     is_none_valid: ->
       res = true
       for name, values of @depends_on_none()
-        for value in _.flatten([values])
+        for value in flatten([values])
           input_value = @is_valid(name, value)
           res = (res && !input_value)
       res

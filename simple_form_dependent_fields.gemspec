@@ -20,8 +20,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'simple_form'
   spec.add_dependency 'coffee-rails'
 
-  # TODO: Optimize
-  spec.add_dependency 'lodash-rails'
   spec.add_dependency 'jquery-rails'
 
   spec.add_development_dependency 'rails'

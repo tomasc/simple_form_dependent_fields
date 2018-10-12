@@ -1,5 +1,4 @@
 require 'simple_form'
-require 'lodash-rails'
 
 require 'simple_form_dependent_fields/version'
 

@@ -2,8 +2,8 @@ PATH
   remote: .
   specs:
     simple_form_dependent_fields (0.1.0)
+      coffee-rails
       jquery-rails
-      lodash-rails
       simple_form
 
 GEM
@@ -108,8 +108,6 @@ GEM
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
       ruby_dep (~> 1.2)
-    lodash-rails (4.17.10)
-      railties (>= 3.1)
     loofah (2.2.2)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -216,9 +214,8 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.12)
-  capybara
+  capybara (~> 2.1)
   capybara-screenshot
-  coffee-rails
   guard
   guard-minitest
   minitest (~> 5.0)
