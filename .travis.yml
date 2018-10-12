@@ -4,8 +4,9 @@ rvm:
   - 2.5.1
 addons:
   apt:
-    - google-chrome-stable
-    - chromium-chromedriver
+    sources:
+      - google-chrome-stable
+      - chromium-chromedriver
 before_install:
   - gem install bundler -v 1.16.1
 before_script:
