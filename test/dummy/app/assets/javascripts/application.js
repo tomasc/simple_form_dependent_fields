@@ -14,3 +14,9 @@
 //= require simple_form_dependent_fields
 //= require rails-ujs
 //= require_tree .
+
+$(document).ready(
+  function() {
+    $(".simple_form_dependent_fields").simple_form_dependent_fields()
+  }
+)
