@@ -1,7 +1,7 @@
 #= require lodash/4.17.10/index.js
 
 do ($ = jQuery, window, document) ->
-  pluginName = 'SimpleFormDependentFields'
+  pluginName = 'simple_form_dependent_fields'
   defaults =
     debug: false
     scope_selector: '.simple_form_dependent_fields__scope, .simple_form_dependent_fields__item, form'
