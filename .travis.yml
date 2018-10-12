@@ -3,7 +3,10 @@ language: ruby
 rvm:
   - 2.5.1
 addons:
-  chrome: stable
+  apt:
+    - google-chrome-stable
+    - chromium-chromedriver
 before_install:
   - gem install bundler -v 1.16.1
-  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+before_script:
+  - ln -s /usr/lib/chromium-browser/chromedriver ~/bin/chromedriver
