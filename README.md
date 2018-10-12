@@ -22,6 +22,12 @@ Or install it yourself as:
 
     $ gem install simple_form_dependent_fields
 
+Then require the javascript in your `application.js` (if using sprockets):
+
+```
+//= require simple_form_dependent_fields
+```
+
 ## Usage
 
 ```ERB
@@ -51,7 +57,7 @@ depends_on_all: { field: value, other_field: value }
 depends_on_none: { field: value, other_field: value }
 ```
 
-## To-Do
+## Todo
 
 * Multiple select field
 
