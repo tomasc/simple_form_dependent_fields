@@ -9,3 +9,5 @@ addons:
       - chromium-chromedriver
 before_install:
   - gem install bundler -v 1.16.1
+before_script:
+  - ln -s /usr/lib/chromium-browser/chromedriver ~/bin/chromedriver
