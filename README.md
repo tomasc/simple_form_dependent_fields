@@ -1,5 +1,7 @@
 # Simple Form Dependent Fields
 
+[![Build Status](https://travis-ci.org/tomasc/simple_form_dependent_fields.svg)](https://travis-ci.org/tomasc/simple_form_dependent_fields) [![Gem Version](https://badge.fury.io/rb/simple_form_dependent_fields.svg)](http://badge.fury.io/rb/simple_form_dependent_fields) [![Coverage Status](https://img.shields.io/coveralls/tomasc/simple_form_dependent_fields.svg)](https://coveralls.io/r/tomasc/simple_form_dependent_fields)
+
 Dependent fields helper for [`simple_form`](https://github.com/plataformatec/simple_form).
 
 Show or hide dependent fields in forms based on checkboxes, radios and selects.
@@ -61,12 +63,8 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/simple_form_dependent_fields. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/tomasc/simple_form_dependent_fields. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the SimpleFormDependentFields project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/simple_form_dependent_fields/blob/master/CODE_OF_CONDUCT.md).

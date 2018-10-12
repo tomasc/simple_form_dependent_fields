@@ -2,11 +2,11 @@
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory(require("jquery"));
 	else if(typeof define === 'function' && define.amd)
-		define("@tomasc/simple_form_attachments", ["jquery"], factory);
+		define("@tomasc/simple_form_dependent_fields", ["jquery"], factory);
 	else if(typeof exports === 'object')
-		exports["@tomasc/simple_form_attachments"] = factory(require("jquery"));
+		exports["@tomasc/simple_form_dependent_fields"] = factory(require("jquery"));
 	else
-		root["@tomasc/simple_form_attachments"] = factory(root["jquery"]);
+		root["@tomasc/simple_form_dependent_fields"] = factory(root["jquery"]);
 })(typeof self !== 'undefined' ? self : this, function(__WEBPACK_EXTERNAL_MODULE_2__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
