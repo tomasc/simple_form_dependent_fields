@@ -3,11 +3,9 @@ language: ruby
 rvm:
   - 2.5.1
 addons:
+  chrome: stable
   apt:
-    sources:
-      - google-chrome-stable
+    packages:
       - chromium-chromedriver
 before_install:
   - gem install bundler -v 1.16.1
-before_script:
-  - ln -s /usr/lib/chromium-browser/chromedriver ~/bin/chromedriver
