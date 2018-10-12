@@ -114,7 +114,7 @@ var indexOf = [].indexOf;
 
       this.element = element;
       this.$element = $(this.element);
-      this.settings = $.extend({}, defaults, options);
+      this.options = $.extend({}, defaults, options);
       this._defaults = defaults;
       this._name = pluginName;
       this.init();
@@ -133,7 +133,7 @@ var indexOf = [].indexOf;
           if (!_this.is_dependent_on_input($(e.target))) {
             return;
           }
-          if (!$(e.target).closest(_this.settings.scope_selector).is(_this.scope_element)) {
+          if (!$(e.target).closest(_this.options.scope_selector).is(_this.scope_element)) {
             return;
           }
           return _this.update_dependent_fields();
@@ -196,13 +196,13 @@ var indexOf = [].indexOf;
         var _this2 = this;
 
         return this.scope_element.find('input,select').not(':hidden').filter(function (i, el) {
-          return $(el).closest(_this2.settings.scope_selector).is(_this2.scope_element);
+          return $(el).closest(_this2.options.scope_selector).is(_this2.scope_element);
         });
       }
     }, {
       key: 'get_scope_element',
       value: function get_scope_element() {
-        return this.$element.closest(this.settings.scope_selector);
+        return this.$element.closest(this.options.scope_selector);
       }
 
       // ---------------------------------------------------------------------

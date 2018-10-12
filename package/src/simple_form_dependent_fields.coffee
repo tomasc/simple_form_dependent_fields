@@ -11,7 +11,7 @@ do ($ = jQuery, window, document) ->
   class Plugin
     constructor: (@element, options) ->
       @$element = $(@element)
-      @settings = $.extend {}, defaults, options
+      @options = $.extend {}, defaults, options
       @_defaults = defaults
       @_name = pluginName
       @init()
@@ -22,7 +22,7 @@ do ($ = jQuery, window, document) ->
       @form_update_handler = (e) =>
         return unless @$element.is(':visible')
         return unless @is_dependent_on_input($(e.target))
-        return unless $(e.target).closest(@settings.scope_selector).is(@scope_element)
+        return unless $(e.target).closest(@options.scope_selector).is(@scope_element)
         @update_dependent_fields()
       @scope_element.on "change.#{@options.name}", 'input,select', @form_update_handler
 
@@ -46,8 +46,8 @@ do ($ = jQuery, window, document) ->
     get_form: -> @$element.closest('form')
     get_input: (name) -> @get_inputs().filter("[name$='[#{name}]']")
     get_input_names: -> Object.keys(@depends_on_any() || {}).concat Object.keys(@depends_on_all() || {}).concat Object.keys(@depends_on_none() || {})
-    get_inputs: -> @scope_element.find('input,select').not(':hidden').filter (i, el) => $(el).closest(@settings.scope_selector).is(@scope_element)
-    get_scope_element: -> @$element.closest(@settings.scope_selector)
+    get_inputs: -> @scope_element.find('input,select').not(':hidden').filter (i, el) => $(el).closest(@options.scope_selector).is(@scope_element)
+    get_scope_element: -> @$element.closest(@options.scope_selector)
 
     # ---------------------------------------------------------------------
 
