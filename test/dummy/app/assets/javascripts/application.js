@@ -17,6 +17,6 @@
 
 $(document).ready(
   function() {
-    $(".simple_form_dependent_fields").simple_form_dependent_fields()
+    $(".simple_form_dependent_fields").SimpleFormDependentFields()
   }
 )

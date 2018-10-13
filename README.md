@@ -22,10 +22,20 @@ Or install it yourself as:
 
     $ gem install simple_form_dependent_fields
 
-Then require the javascript in your `application.js` (if using sprockets):
+Then require the javascript in your `application.js` (if using Sprockets):
 
 ```
 //= require simple_form_dependent_fields
+```
+
+and initialise the plugin like this:
+
+```js
+$(document).ready(
+  function() {
+    $(".simple_form_dependent_fields").SimpleFormDependentFields()
+  }
+)
 ```
 
 ## Usage

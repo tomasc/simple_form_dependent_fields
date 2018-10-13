@@ -1,11 +1,10 @@
 import { filter, flatten } from 'lodash'
 
 do ($ = jQuery, window, document) ->
-  pluginName = 'simple_form_dependent_fields'
+  pluginName = 'SimpleFormDependentFields'
   document = window.document
   defaults =
     debug: false
-    name: 'SimpleFormDependentFields'
     scope_selector: '.simple_form_dependent_fields__scope, .simple_form_dependent_fields__item, form'
 
   class Plugin
@@ -24,7 +23,7 @@ do ($ = jQuery, window, document) ->
         return unless @is_dependent_on_input($(e.target))
         return unless $(e.target).closest(@options.scope_selector).is(@scope_element)
         @update_dependent_fields()
-      @scope_element.on "change.#{@options.name}", 'input,select', @form_update_handler
+      @scope_element.on "change.#{@_name}", 'input,select', @form_update_handler
 
       @update_dependent_fields()
 
@@ -32,7 +31,7 @@ do ($ = jQuery, window, document) ->
       # we need to be specific to remove only handler of this updated fields
       # otherwise we might accidentally remove all handlers of all dependent fields
       # in the same form
-      @scope_element.off ".#{@options.name}", 'input,select', @form_update_handler
+      @scope_element.off ".#{@_name}", 'input,select', @form_update_handler
 
     # ---------------------------------------------------------------------
 

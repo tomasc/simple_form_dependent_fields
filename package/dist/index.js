@@ -101,11 +101,10 @@ var indexOf = [].indexOf;
 
 (function ($, window, document) {
   var Plugin, defaults, pluginName;
-  pluginName = 'simple_form_dependent_fields';
+  pluginName = 'SimpleFormDependentFields';
   document = window.document;
   defaults = {
     debug: false,
-    name: 'SimpleFormDependentFields',
     scope_selector: '.simple_form_dependent_fields__scope, .simple_form_dependent_fields__item, form'
   };
   Plugin = function () {
@@ -138,7 +137,7 @@ var indexOf = [].indexOf;
           }
           return _this.update_dependent_fields();
         };
-        this.scope_element.on('change.' + this.options.name, 'input,select', this.form_update_handler);
+        this.scope_element.on('change.' + this._name, 'input,select', this.form_update_handler);
         return this.update_dependent_fields();
       }
     }, {
@@ -147,7 +146,7 @@ var indexOf = [].indexOf;
         // we need to be specific to remove only handler of this updated fields
         // otherwise we might accidentally remove all handlers of all dependent fields
         // in the same form
-        return this.scope_element.off('.' + this.options.name, 'input,select', this.form_update_handler);
+        return this.scope_element.off('.' + this._name, 'input,select', this.form_update_handler);
       }
 
       // ---------------------------------------------------------------------
