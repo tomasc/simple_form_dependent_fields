@@ -3,7 +3,6 @@ PATH
   specs:
     simple_form_dependent_fields (0.1.0)
       coffee-rails
-      jquery-rails
       simple_form
 
 GEM
@@ -54,6 +53,7 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     ansi (1.5.0)
     arel (9.0.0)
+    bson (4.3.0)
     builder (3.2.3)
     capybara (2.18.0)
       addressable
@@ -140,6 +140,11 @@ GEM
       builder
       minitest (>= 5.0)
       ruby-progressbar
+    mongo (2.6.2)
+      bson (>= 4.3.0, < 5.0.0)
+    mongoid (7.0.2)
+      activemodel (>= 5.1, < 6.0.0)
+      mongo (>= 2.5.1, < 3.0.0)
     nenv (0.3.0)
     nio4r (2.3.1)
     nokogiri (1.8.4)
@@ -218,10 +223,12 @@ DEPENDENCIES
   capybara-screenshot
   guard
   guard-minitest
+  jquery-rails
   minitest (~> 5.0)
   minitest-metadata
   minitest-rails-capybara
   minitest-reporters
+  mongoid
   rails
   rake (~> 10.0)
   selenium-webdriver

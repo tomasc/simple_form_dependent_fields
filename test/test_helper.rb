@@ -9,7 +9,6 @@ require File.expand_path('../dummy/config/environment', __FILE__)
 
 require 'rails/test_help'
 
-require 'minitest/around'
 require 'minitest/autorun'
 require 'minitest/rails'
 require 'minitest/reporters'
