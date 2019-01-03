@@ -1,1 +1,2 @@
-import './simple_form_dependent_fields'
+import SimpleFormDependentFields from './simple_form_dependent_fields'
+export default SimpleFormDependentFields

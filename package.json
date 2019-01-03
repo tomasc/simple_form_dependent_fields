@@ -1,5 +1,5 @@
 {
-  "name": "simple_form_dependent_fields",
+  "name": "@tomasc/simple_form_dependent_fields",
   "version": "0.1.0",
   "description": "Show or hide dependent fields in forms based on checkboxes, radios and selects.",
   "main": "package/dist/index.js",

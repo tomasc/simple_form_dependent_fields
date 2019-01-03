@@ -7,7 +7,7 @@
 		exports["@tomasc/simple_form_dependent_fields"] = factory(require("jquery"));
 	else
 		root["@tomasc/simple_form_dependent_fields"] = factory(root["jquery"]);
-})(typeof self !== 'undefined' ? self : this, function(__WEBPACK_EXTERNAL_MODULE_2__) {
+})(typeof self !== 'undefined' ? self : this, function(__WEBPACK_EXTERNAL_MODULE_0__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -70,87 +70,96 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
+
+/***/ }),
+/* 1 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__simple_form_dependent_fields__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__simple_form_dependent_fields__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__simple_form_dependent_fields___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__simple_form_dependent_fields__);
 
+/* harmony default export */ __webpack_exports__["default"] = (__WEBPACK_IMPORTED_MODULE_0__simple_form_dependent_fields___default.a);
 
 
 /***/ }),
-/* 1 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(jQuery) {
+/* WEBPACK VAR INJECTION */(function($) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _lodash = __webpack_require__(3);
 
+var _plugin = __webpack_require__(6);
+
+var _plugin2 = _interopRequireDefault(_plugin);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var indexOf = [].indexOf;
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-(function ($, window, document) {
-  var Plugin, defaults, pluginName;
-  pluginName = 'SimpleFormDependentFields';
-  document = window.document;
-  defaults = {
-    debug: false,
-    scope_selector: '.simple_form_dependent_fields__scope, .simple_form_dependent_fields__item, form'
-  };
-  Plugin = function () {
-    function Plugin(element, options) {
-      _classCallCheck(this, Plugin);
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-      this.element = element;
-      this.$element = $(this.element);
-      this.options = $.extend({}, defaults, options);
-      this._defaults = defaults;
-      this._name = pluginName;
-      this.init();
+var SimpleFormDependentFields,
+    indexOf = [].indexOf;
+
+exports.default = SimpleFormDependentFields = function () {
+  var SimpleFormDependentFields = function (_Plugin) {
+    _inherits(SimpleFormDependentFields, _Plugin);
+
+    function SimpleFormDependentFields() {
+      _classCallCheck(this, SimpleFormDependentFields);
+
+      return _possibleConstructorReturn(this, (SimpleFormDependentFields.__proto__ || Object.getPrototypeOf(SimpleFormDependentFields)).apply(this, arguments));
     }
 
-    _createClass(Plugin, [{
+    _createClass(SimpleFormDependentFields, [{
       key: 'init',
       value: function init() {
-        var _this = this;
+        var _this2 = this;
 
         this.scope_element = this.get_scope_element();
         this.form_update_handler = function (e) {
-          if (!_this.$element.is(':visible')) {
+          if (!_this2.$element.is(':visible')) {
             return;
           }
-          if (!_this.is_dependent_on_input($(e.target))) {
+          if (!_this2.is_dependent_on_input($(e.target))) {
             return;
           }
-          if (!$(e.target).closest(_this.options.scope_selector).is(_this.scope_element)) {
+          if (!$(e.target).closest(_this2.options.scope_selector).is(_this2.scope_element)) {
             return;
           }
-          return _this.update_dependent_fields();
+          return _this2.update_dependent_fields();
         };
-        this.scope_element.on('change.' + this._name, 'input,select', this.form_update_handler);
+        this.scope_element.on("change.SimpleFormDependentFields", 'input,select', this.form_update_handler);
         return this.update_dependent_fields();
       }
     }, {
-      key: 'teardown',
-      value: function teardown() {
+      key: 'destroy',
+      value: function destroy() {
         // we need to be specific to remove only handler of this updated fields
         // otherwise we might accidentally remove all handlers of all dependent fields
         // in the same form
-        return this.scope_element.off('.' + this._name, 'input,select', this.form_update_handler);
+        return this.scope_element.off(".SimpleFormDependentFields", 'input,select', this.form_update_handler);
       }
-
-      // ---------------------------------------------------------------------
-
     }, {
       key: 'depends_on',
       value: function depends_on() {
@@ -171,9 +180,6 @@ var indexOf = [].indexOf;
       value: function depends_on_none() {
         return this.depends_on()['depends_on_none'];
       }
-
-      // ---------------------------------------------------------------------
-
     }, {
       key: 'get_form',
       value: function get_form() {
@@ -192,10 +198,10 @@ var indexOf = [].indexOf;
     }, {
       key: 'get_inputs',
       value: function get_inputs() {
-        var _this2 = this;
+        var _this3 = this;
 
         return this.scope_element.find('input,select').not(':hidden').filter(function (i, el) {
-          return $(el).closest(_this2.options.scope_selector).is(_this2.scope_element);
+          return $(el).closest(_this3.options.scope_selector).is(_this3.scope_element);
         });
       }
     }, {
@@ -203,9 +209,6 @@ var indexOf = [].indexOf;
       value: function get_scope_element() {
         return this.$element.closest(this.options.scope_selector);
       }
-
-      // ---------------------------------------------------------------------
-
     }, {
       key: 'is_dependent_on_input',
       value: function is_dependent_on_input($input) {
@@ -213,9 +216,6 @@ var indexOf = [].indexOf;
           return $input.is('[name$=\'[' + name + ']\']');
         }).length > 0;
       }
-
-      // ---------------------------------------------------------------------
-
     }, {
       key: 'update_dependent_fields',
       value: function update_dependent_fields() {
@@ -246,9 +246,6 @@ var indexOf = [].indexOf;
           return this.$element.data('template-html', template_html);
         }
       }
-
-      // ---------------------------------------------------------------------
-
     }, {
       key: 'is_condition_valid',
       value: function is_condition_valid() {
@@ -346,25 +343,20 @@ var indexOf = [].indexOf;
       }
     }]);
 
-    return Plugin;
-  }();
-  // A really lightweight plugin wrapper around the constructor,
-  // preventing against multiple instantiations
-  return $.fn[pluginName] = function (options) {
-    return this.each(function () {
-      if (!$.data(this, 'plugin_' + pluginName)) {
-        return $.data(this, 'plugin_' + pluginName, new Plugin(this, options));
-      }
-    });
+    return SimpleFormDependentFields;
+  }(_plugin2.default);
+
+  ;
+
+  SimpleFormDependentFields.defaults = {
+    name: 'SimpleFormDependentFields',
+    debug: false,
+    scope_selector: '.simple_form_dependent_fields__scope, .simple_form_dependent_fields__item, form'
   };
-})(jQuery, window, document);
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
-/***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE_2__;
+  return SimpleFormDependentFields;
+}.call(undefined);
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
 /* 3 */
@@ -17535,6 +17527,92 @@ module.exports = function(module) {
 	return module;
 };
 
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function($) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Plugin;
+
+exports.default = Plugin = function () {
+  _createClass(Plugin, null, [{
+    key: "register",
+    value: function register() {
+      var defaults, klass, name, options, ref, ref1, selector;
+      klass = this;
+      defaults = (ref = this.defaults) != null ? ref : {};
+      name = defaults.name || (defaults.name = /function ([^(]*)/.exec(klass + "")[1]);
+      options = Array.prototype.slice.call(arguments).slice(1);
+      selector = (ref1 = arguments[0]) != null ? ref1 : klass.selector;
+      return this.init_plugin(klass, name);
+    }
+  }, {
+    key: "init_plugin",
+    value: function init_plugin(klass, name) {
+      if ($.fn[name] !== void 0) {
+        return;
+      }
+      return $.fn[name] = function (options) {
+        var args, dataKey, returns;
+        args = arguments;
+        dataKey = "plugin_" + name;
+        if (options === undefined || (typeof options === "undefined" ? "undefined" : _typeof(options)) === "object") {
+          return this.each(function () {
+            var instance;
+            this.pluginInstances || (this.pluginInstances = {});
+            if (!this.pluginInstances[dataKey]) {
+              instance = new klass(this, options);
+              return this.pluginInstances[dataKey] = instance;
+            }
+          });
+        } else if (typeof options === 'string' && options[0] !== '_' && options !== 'init') {
+          returns = void 0;
+          this.each(function () {
+            var instance;
+            this.pluginInstances || (this.pluginInstances = {});
+            instance = this.pluginInstances[dataKey];
+            if (instance instanceof klass && typeof instance[options] === 'function') {
+              returns = instance[options].apply(instance, Array.prototype.slice.call(args, 1));
+            }
+            if (options === 'destroy') {
+              return this.pluginInstances[dataKey] = null;
+            }
+          });
+          if (returns !== undefined) {
+            return returns;
+          } else {
+            return this;
+          }
+        }
+      };
+    }
+  }]);
+
+  function Plugin(element, options) {
+    _classCallCheck(this, Plugin);
+
+    this.element = element;
+    this.options = $.extend({}, this.constructor.defaults, options);
+    this.$element = $(this.element);
+    this.init();
+  }
+
+  return Plugin;
+}();
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ })
 /******/ ]);
