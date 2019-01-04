@@ -21,10 +21,10 @@ module.exports = {
       }
     ],
   },
-  externals: {
-    jquery: 'jquery',
-    lodash: 'lodash'
-  },
+  externals: [
+    'jquery',
+    'lodash'
+  ],
   entry: './package/src/index.js',
   output: {
     library: '@tomasc/simple_form_dependent_fields',
