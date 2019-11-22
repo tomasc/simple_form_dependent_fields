@@ -6,7 +6,7 @@ export default class SimpleFormDependentFields extends Plugin
   @defaults =
     name: 'SimpleFormDependentFields'
     debug: false
-    scope_selector: '.simple_form_dependent_fields__scope, .simple_form_dependent_fields__item, form'
+    scope_selector: '.simple_form_dependent_fields__scope, .simple_form_dependent_fields__item, .simple_form_nested_fields__item, form'
 
   init: ->
     @scope_element = @get_scope_element()
